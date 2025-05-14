@@ -15,7 +15,7 @@ def main():
     
     # EA intro
     ea_text = pyfiglet.figlet_format("EA GAMES", font="slant")
-    console.print(Panel(ea_text, border_style="bright_blue"))
+    console.print(Panel(f"{ea_text}\n[bold blue]Designed for MS-DOS[/bold blue]", border_style="bright_blue"))
     time.sleep(3)
     
     # Konsolu temizle

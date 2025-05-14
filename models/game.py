@@ -192,8 +192,13 @@ class Game:
             self.show_main_menu()
         else:
             self.clear_console()
-            self.console.print(f"[green]Eklenecek.[/green]")
-            time.sleep(2)
+            self.console.print(f"[red]Eklenecek.[/red]")
+            self.console.print(f"[green]3 saniye içinde ana menüye dönülüyor...[/green]\n")
+            with Progress() as progress:
+                task = progress.add_task("", total=100)
+                while not progress.finished:
+                    progress.update(task, advance=1.6667)  # Her adımda %1.6667 ilerle
+                    time.sleep(0.05)  # 0.05 saniyede bir güncelle
             self.clear_console()
             self.show_status()
             self.show_actions()
